@@ -3,9 +3,7 @@ function getRandomInRange(min, max) {
 }
 
 class Team {
-  constructor(count) {
-    this.from = 1;
-    this.to = count;
+  constructor() {
     this.characters = [
       {
         name: 'Лучник',
@@ -35,8 +33,8 @@ class Team {
   }
 
   * [Symbol.iterator]() {
-    for (let i = this.from; i <= this.to; i += 1) {
-      yield this.characters[getRandomInRange(0, this.characters.length - 1)];
+    for (let i = 0; i <= this.characters.length; i += 1) {
+      yield this.characters[i];
     }
   }
 }
